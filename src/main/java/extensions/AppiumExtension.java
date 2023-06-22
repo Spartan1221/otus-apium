@@ -10,5 +10,6 @@ public class AppiumExtension implements BeforeAllCallback {
     public void beforeAll(ExtensionContext context) throws Exception {
         Configuration.browserSize = null;
         Configuration.browser = AppiumSelenideDriver.class.getName();
+        Configuration.timeout = 15000L;
     }
 }
