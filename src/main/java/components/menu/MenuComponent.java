@@ -4,7 +4,10 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import components.AbsBaseComponent;
 import org.openqa.selenium.By;
+import pages.ExercisePage;
+import pages.GrammarPage;
 import pages.StartPage;
+import pages.StatsPage;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -26,9 +29,9 @@ public class MenuComponent extends AbsBaseComponent {
         return this;
     }
 
-    public MenuComponent clickExerciseButton(){
+    public ExercisePage clickExerciseButton(){
         exerciseButton.click();
-        return this;
+        return new ExercisePage();
     }
 
     public MenuComponent exerciseButtonShouldBeVisible(){
@@ -36,9 +39,9 @@ public class MenuComponent extends AbsBaseComponent {
         return this;
     }
 
-    public MenuComponent clickGrammarButton(){
+    public GrammarPage clickGrammarButton(){
         grammarButton.click();
-        return this;
+        return new GrammarPage();
     }
 
     public MenuComponent grammarButtonShouldBeVisible(){
@@ -46,9 +49,9 @@ public class MenuComponent extends AbsBaseComponent {
         return this;
     }
 
-    public MenuComponent clickStatsButton(){
+    public StatsPage clickStatsButton(){
         statsButton.click();
-        return this;
+        return new StatsPage();
     }
 
     public MenuComponent statsButtonShouldBeVisible(){

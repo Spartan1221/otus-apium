@@ -10,7 +10,7 @@ public class ExercisePage extends AbsBasePage<ExercisePage> {
     private SelenideElement titleTextView = $("[text='Learn 5 new words today']");
     private SelenideElement startButton = $("[text='Start']");
 
-    public ExercisePage titleTOfPageShouldBeVisible(String expectedText){
+    public ExercisePage titleTOfPageShouldBeVisible(){
         titleTextView.shouldBe(Condition.visible);
 
         return this;
