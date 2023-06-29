@@ -18,14 +18,14 @@ public class AppiumSelenideDriver implements WebDriverProvider {
         UiAutomator2Options uiAutomator2Options = new UiAutomator2Options();
         uiAutomator2Options.merge(capabilities);
         uiAutomator2Options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        uiAutomator2Options.setPlatformName("Android");
-        uiAutomator2Options.setDeviceName("otus");
-        uiAutomator2Options.setPlatformVersion("11.0");
+        uiAutomator2Options.setPlatformName(System.getProperty("platformName"));
+        uiAutomator2Options.setDeviceName(System.getProperty("deviceName"));
+        uiAutomator2Options.setPlatformVersion(System.getProperty("platformVersion"));
         uiAutomator2Options.setAppPackage("com.pyankoff.andy");
         uiAutomator2Options.setAppActivity(".MainActivity");
 
         try {
-            return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), uiAutomator2Options);
+            return new AndroidDriver(new URL(System.getProperty("appiumServerUrl")), uiAutomator2Options);
         } catch (MalformedURLException e){
             throw new RuntimeException(e);
         }
