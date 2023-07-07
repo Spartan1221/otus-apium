@@ -28,7 +28,7 @@ imeout(180) {
             results: [[path: 'build/reports/allure-results']]
         ])
       }
-      stage('Publish notification in telegram') {
+/*      stage('Publish notification in telegram') {
         lines = readFile 'target/allure-results/export/influxDbData.txt'
         def message = "============= UI REORT ============"
         for (line in lines) {
@@ -45,7 +45,7 @@ imeout(180) {
           connection.setRequestMethod('POST')
           connection.setDoOutput(true)
         }
-      }
+      }*/
     }
   }
 }
